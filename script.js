@@ -49,9 +49,18 @@ function playRound(humanChoice, computerChoice){
     }
 }  
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
 let humanScore = 0;
 let computerScore = 0;
 
-playRound(humanSelection, computerSelection);
+function playGame(){
+    humanScore = 0;
+    computerScore = 0;
+    for(let i = 0; i < 5; i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection); 
+    }
+    console.log("Player Score: " + humanScore + " " + "Computer Score: " + computerScore);
+}
+
+playGame();
